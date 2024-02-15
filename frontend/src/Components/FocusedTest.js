@@ -42,7 +42,7 @@ const FocusedTest = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/tests/${categoryId}/get_test/`, {
+      .get(`${process.env.REACT_APP_DEP_URL}api/tests/${categoryId}/get_test/`, {
         headers: {
           Authorization: `Bearer ${AuthTokens.access}`,
         },
@@ -147,7 +147,7 @@ const FocusedTest = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/tests/submit_ans/",
+        `${process.env.REACT_APP_DEP_URL}api/tests/submit_ans/`,
         data,
         {
           headers: {

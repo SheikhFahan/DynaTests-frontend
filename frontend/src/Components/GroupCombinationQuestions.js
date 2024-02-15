@@ -8,7 +8,7 @@ import QuestionCard from "./QuestionCard";
 
 const GroupCombinationQuestions = () => {
   const { instId, sessionId } = useParams();
-  const baseUrl = "http://127.0.0.1:8000/api/group_tests/";
+  const baseUrl = `${process.env.REACT_APP_DEP_URL}api/group_tests/`;
   const [sessionInfo, setSessionInfo] = useState([]);
   const [showModal, setShowModal] = useState(true);
   const { AuthTokens } = useContext(AuthContext);
@@ -158,7 +158,7 @@ const GroupCombinationQuestions = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/group_tests/submit_ans_cc/",
+        `${process.env.REACT_APP_DEP_URL}api/group_tests/submit_ans_cc/`,
         data,
         {
           headers: {

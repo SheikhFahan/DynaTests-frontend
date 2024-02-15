@@ -42,7 +42,7 @@ const StudentPerformance = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/user/categories/", {
+      .get(`${process.env.REACT_APP_DEP_URL}api/user/categories/`, {
         headers: {
           Authorization: `Bearer ${AuthTokens.access}`,
         },
@@ -57,7 +57,7 @@ const StudentPerformance = () => {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/user/questions_statistics/", {
+      .get(`${process.env.REACT_APP_DEP_URL}api/user/questions_statistics/`, {
         headers: {
           Authorization: `Bearer ${AuthTokens.access}`,
         },
@@ -70,7 +70,7 @@ const StudentPerformance = () => {
 
   const handleOptionClick = (pk) => {
     axios
-      .get(`http://127.0.0.1:8000/api/user/${pk}/marks/`, {
+      .get(`${process.env.REACT_APP_DEP_URL}api/user/${pk}/marks/`, {
         headers: {
           Authorization: `Bearer ${AuthTokens.access}`,
         },
@@ -84,7 +84,7 @@ const StudentPerformance = () => {
 
   const handleCategoryData = (pk) => {
     axios
-      .get(`http://127.0.0.1:8000/api/user/questions_statistics/${pk}/`, {
+      .get(`${process.env.REACT_APP_DEP_URL}api/user/questions_statistics/${pk}/`, {
         headers: {
           Authorization: `Bearer ${AuthTokens.access}`,
         },

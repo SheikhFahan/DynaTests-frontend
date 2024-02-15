@@ -8,7 +8,7 @@ import axios from "axios";
 import AuthContext from "../Context/AuthContext";
 
 const CreateGroupSubTest = () => {
-  const baseURL  = "http://127.0.0.1:8000/api/"
+  const baseURL  = `${process.env.REACT_APP_DEP_URL}api/`
   const [category, setCategory] = useState([]);
   let { user} = useContext(AuthContext);
   const [formData, setFormData] = useState({

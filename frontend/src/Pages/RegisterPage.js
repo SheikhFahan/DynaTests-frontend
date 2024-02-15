@@ -18,14 +18,14 @@ const RegisterPage = () => {
   const [message, setMessage] = useState("");
 
   const [baseURL, setBaseURL] = useState(
-    "http://127.0.0.1:8000/api/create_user/"
+    `${process.env.REACT_APP_DEP_URL}api/create_user/`
   );
 
   const handleRadioChange = (event) => {
     if (event.target.value === "student") {
-      setBaseURL("http://127.0.0.1:8000/api/create_user/");
+      setBaseURL(`${process.env.REACT_APP_DEP_URL}api/create_user/`);
     } else if (event.target.value === "college") {
-      setBaseURL("http://127.0.0.1:8000/api/create_institute_user/");
+      setBaseURL(`${process.env.REACT_APP_DEP_URL}api/create_institute_user/`);
     }
   };
 

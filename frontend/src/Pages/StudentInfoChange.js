@@ -6,7 +6,7 @@ import AuthContext from '../Context/AuthContext'
 import { redirect, useLocation, useNavigate } from 'react-router-dom';
 
 const StudentInfoChange = () => {
-  const url = "http://127.0.0.1:8000/api/user/profile_student/";
+  const url = `${process.env.REACT_APP_DEP_URL}api/user/profile_student/`;
   const location = useLocation();
   const { name, email, phone, address } = location.state;
   const [data, setData] = useState({ 
@@ -55,7 +55,7 @@ console.log()
         <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
           <Form.Control
             type="tel"
-            placeholder={phone}
+            placeholder={phone? phone : "XXXXXXXXXX"}
             name="phone"
             onChange={handleInputChange}
           />

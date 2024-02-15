@@ -28,7 +28,7 @@ const ChangePasswordPage = () => {
     if(passwordData.new_password != password) return alert("passwords don't match")
     try {
       const response = await axios.post(
-        `${url}`,
+        `${process.env.REACT_APP_DEP_URL}api/change_password/`,
         passwordData,
         {
           headers: {

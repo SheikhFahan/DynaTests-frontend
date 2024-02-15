@@ -11,7 +11,7 @@ import AuthContext from "../Context/AuthContext";
 const CreateCategoriesComp = () => {
   const { user, AuthTokens } = useContext(AuthContext);
 
-  const baseUrl = "http://127.0.0.1:8000/api/";
+  const baseUrl = `${process.env.REACT_APP_DEP_URL}api/`;
   const [data, setData] = useState({});
 
   const getEndpoint = (user) => {

@@ -9,7 +9,7 @@ import AuthContext from "../Context/AuthContext";
 import React, { useState, useEffect, useContext } from "react";
 
 const Dashboard = (props) => {
-  const mainUrl = "http://127.0.0.1:8000/api/group_tests/";
+  const mainUrl = `${process.env.REACT_APP_DEP_URL}api/group_tests/`;
   const { compName, urlEnd } = props.data;
   const [copySuccess, setCopySuccess] = useState({});
   const [copiedButtonText, setCopiedButtonText] = useState("Copy Session Link");

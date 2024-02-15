@@ -13,7 +13,7 @@ const ForgotPassowordPage = () => {
         e.preventDefault();
         if (!email) return alert("please enter a valid email") 
         try {
-            const response = await axios.post(`${url}`,{email :email}, {
+            const response = await axios.post(`${process.env.REACT_APP_DEP_URL}api/forgot_password/`,{email :email}, {
             headers : {
                 "Content-Type" : "application/json"
             }

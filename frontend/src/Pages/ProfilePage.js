@@ -8,7 +8,7 @@ import InstituteTestSummary from "../Components/InstituteTestSummary";
 import RadarChartComp from '../Components/RadarChartComp'
 
 const ProfileCard = () => {
-  const baseURL = "http://127.0.0.1:8000/api/user/";
+  const baseURL = `${process.env.REACT_APP_DEP_URL}api/user/`;
   let [profileData, setProfileData] = useState([]);
 
   const { user, AuthTokens } = useContext(AuthContext);
@@ -24,7 +24,7 @@ const ProfileCard = () => {
           endpoint: "profile_student/",
         };
       default:
-        throw new Error(`Unexpected value for name: ${group}`);
+        throw new Error(`Unexpected value for : ${group}`);
     }
   };
   const { endpoint } = getEndpoint(user.group);

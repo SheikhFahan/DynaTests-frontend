@@ -18,7 +18,7 @@ const CombinationQuestions = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/tests/${categoryId}/get_comb_test/`, {
+      .get(`${process.env.REACT_APP_DEP_URL}api/tests/${categoryId}/get_comb_test/`, {
         headers: {
           Authorization: `Bearer ${AuthTokens.access}`,
         },
@@ -96,7 +96,7 @@ const CombinationQuestions = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/tests/submit_comb_ans/",
+        `${process.env.REACT_APP_DEP_URL}api/tests/submit_comb_ans/`,
         data,
         {
           headers: {

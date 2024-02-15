@@ -29,6 +29,7 @@ import ChangePasswordPage from "./Pages/ChangePasswordPage";
 import StudentInfoChange from "./Pages/StudentInfoChange";
 
 function App() {
+  console.log(process.env.REACT_APP_DEP_URL)
   return (
     <>
       <Router>

@@ -7,7 +7,7 @@ import Table from 'react-bootstrap/Table';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const TestHistory = () => {
-  const baseURL = "http://127.0.0.1:8000/api/user/history/";
+  const baseURL = `${process.env.REACT_APP_DEP_URL}api/user/history/`;
   const [data, setData] = useState([""]);
   const [concatArray, setConcatArray] = useState([]);
   const [loading, setLoading] = useState(false);

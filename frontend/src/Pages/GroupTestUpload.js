@@ -10,6 +10,7 @@ import AuthContext from "../Context/AuthContext";
 
 const GroupTestUpload = () => {
   const [category, setCategory] = useState([]);
+  const localURL = "http://127.0.0.1:8000/api/group_tests/group_test_categories"
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -58,7 +59,7 @@ const GroupTestUpload = () => {
   // handle fetch from backend for test categories
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/group_tests/group_test_categories", {
+      .get(`${process.env.REACT_APP_DEP_URL}api/group_tests/group_test_categories`, {
         headers : {
           Authorization :  `Bearer ${AuthTokens.access}`
         }
@@ -87,7 +88,7 @@ const GroupTestUpload = () => {
     formDataToSend.append("has_password", formData.hasPassword);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/group_tests/sub_group_test/",
+        `${process.env.REACT_APP_DEP_URL}api/group_tests/sub_group_test/`,
         formDataToSend,
         {
           headers: {
@@ -118,7 +119,7 @@ const GroupTestUpload = () => {
 
     try{
       const response = await axios.post(
-            "http://127.0.0.1:8000/api/group_tests/create_group_test_passwords/",
+            `${process.env.REACT_APP_DEP_URL}api/group_tests/create_group_test_passwords/`,
             formData,
             {
               headers: {

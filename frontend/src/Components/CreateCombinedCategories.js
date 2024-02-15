@@ -10,7 +10,7 @@ import AuthContext from "../Context/AuthContext";
 import ButtonComp from "./ButtonComp";
 
 const CreateCombinedCategories = () => {
-  const baseURL = "http://127.0.0.1:8000/api/"
+  const baseURL = `${process.env.REACT_APP_DEP_URL}api/`
   const [categories, setCategories] = useState([]);
   const [data, setData] = useState({});
   let [selectedOptions, setSelectedOptions] = useState([]);

@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const AuthContext = createContext();
+const baseURL = "http://127.0.0.1:8000/api/token"
+console.log()
 
 export default AuthContext;
 export const AuthProvider = ({ children }) => {
@@ -32,7 +34,7 @@ export const AuthProvider = ({ children }) => {
       username: e.target.username.value,
       password: e.target.password.value,
     });
-    let response = await axios.post("http://127.0.0.1:8000/api/token/", body, {
+    let response = await axios.post(`${process.env.REACT_APP_DEP_URL}api/token/`, body, {
       headers: {
         "Content-Type": "application/json",
       },
