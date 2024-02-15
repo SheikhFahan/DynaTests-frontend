@@ -32,7 +32,7 @@ const {fetchTestList , fetchTest, name} = getEndpoint(type)
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_DEP_URL}${fetchTestList}`)
+      .get(`${process.env.REACT_APP_DEP_URL}api/tests/${fetchTestList}`)
       .then((response) => {
         console.log(response.data);
         setCategories(response.data); //response.data isn't getting saved to categories
