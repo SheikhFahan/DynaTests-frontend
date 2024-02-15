@@ -164,7 +164,7 @@ const FocusedTest = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="min-h-screen">Loading...</div>;
   }
   if (error) {
     return <div>{error}</div>;
@@ -172,7 +172,7 @@ const FocusedTest = () => {
   return (
     <div className="container flex flex-col items-center min-w-screen ">
       {showScore ? (
-        <div className=" text-4xl p-72">You scored {showScore} out of 100</div>
+        <div className=" text-4xl min-h-screen">You scored {showScore} out of 100</div>
       ) : (
         <>
           <h1>{data.category}</h1>

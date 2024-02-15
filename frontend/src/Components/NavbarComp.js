@@ -15,7 +15,7 @@ const NavbarComp = () => {
   let { user, logoutUser } = useContext(AuthContext);
 
   return (
-    <Navbar expand="lg" className="  bg-gradient-to-b from-gray-200 to-gray-100 ">
+    <Navbar expand="lg" className="  bg-gradient-to-b from-gray-200 to-gray-100  min-h-full min-w-full">
       <Container>
         <Navbar.Brand to="/" as={Link} >
         <img

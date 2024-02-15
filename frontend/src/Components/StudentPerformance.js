@@ -129,7 +129,7 @@ const StudentPerformance = () => {
                   <>
                     <p className="text-lg text-gray-800 mb-4 text-shadow-lg">
                       {rateOfChange > 0
-                        ? `Keep it up! Your score has improved with an average of ${rateOfChange} marks per test.`
+                        ? `Keep it up! Your score has improved with an average of ${rateOfChange.toFixed(2)} marks per test.`
                         : `Looks like you need some work. Your scores are declining with ${-rateOfChange} marks per test.`}
                     </p>
                     <p className="text-base mb-2">

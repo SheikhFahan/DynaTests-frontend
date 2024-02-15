@@ -3,8 +3,8 @@ import ContactInfo from "./ContactInfo";
 
 const Footer = () => {
   return (
-    <footer className="mx-auto  w-full  px-20 pt-5  bg-gray-900  relative  bottom-0">
-      <div className="flex justify-between  bottom-0">
+    <footer className="mx-auto  w-full  px-20 pt-5  bg-gray-900  relative ">
+      <div className="flex justify-between  relative bottom-0">
         <div className="mb-6 ">
           <a href="/" className="flex items-center">
             <img

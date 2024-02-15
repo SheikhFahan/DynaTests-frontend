@@ -31,7 +31,7 @@ import StudentInfoChange from "./Pages/StudentInfoChange";
 function App() {
   console.log(process.env.REACT_APP_DEP_URL)
   return (
-    <>
+    <div className="min-h-screen min-w-screen">
       <Router>
         <AuthProvider>
           <NavbarComp />
@@ -68,7 +68,7 @@ function App() {
         </AuthProvider>
       </Router>
       <Footer />
-    </>
+    </div>
   );
 }
 

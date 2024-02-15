@@ -46,10 +46,9 @@ const {fetchTestList , fetchTest, name} = getEndpoint(type)
   return (
     <>
 
-      <h3>{name}</h3>
-      <div >
+      <div className="min-h-screen p-4">
         {categories.map((item, index) => (
-          <div className="flex flex-wrap justify-center items-center m-3">
+          <div className="flex flex-wrap justify-center items-center  ">
             <Card
               key={index}
               to={`/${fetchTest}${item.pk}`}
