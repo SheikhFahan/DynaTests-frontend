@@ -74,7 +74,9 @@ const CreateGroupSubTest = () => {
     formDataToSend.append("easy_test_file", formData.easyTestFile);
     formDataToSend.append("medium_test_file", formData.mediumTestFile);
     formDataToSend.append("hard_test_file", formData.hardTestFile);
-    formDataToSend.append("has_password", formData.hasPassword);
+    if (uploadTo === "group_tests/group_sub_test/") {
+      formDataToSend.append("has_password", formData.hasPassword);
+  }
     try {
       const response = await axios.post(
         `${baseURL}${uploadTo}`,

@@ -81,7 +81,7 @@ const RegisterPage = () => {
         <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Control
             type="text"
-            placeholder="Username"
+            placeholder="Username no space check"
             name="username"
             onChange={handleInputChange}
           />
