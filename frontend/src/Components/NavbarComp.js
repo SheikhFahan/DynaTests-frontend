@@ -56,16 +56,18 @@ const NavbarComp = () => {
        <NavDropdown title="Dashboards" id="basic-nav-dropdown">
        <NavDropdown.Item to="/institution_dashboard" as={Link} > Management Dashboard</NavDropdown.Item>
        <NavDropdown.Item to="/analytical_dashboard" as={Link} >
-         Visualization Dashboard 
+         DB Visualization Dashboard 
+       </NavDropdown.Item>       <NavDropdown.Item to="/analytical_dashboard" as={Link} >
+         Session Visualization Dashboard 
        </NavDropdown.Item>
        <NavDropdown.Divider />
-       <NavDropdown.Item to="/analytical_dashboard" as={Link}>
+       <NavDropdown.Item >
          SubTests
        </NavDropdown.Item>
-       <NavDropdown.Item to="/analytical_dashboard" as={Link}>
+       <NavDropdown.Item >
          Focused Tests
        </NavDropdown.Item>
-       <NavDropdown.Item to="/analytical_dashboard" as={Link}>
+       <NavDropdown.Item >
          Comprehensive Tests
        </NavDropdown.Item>
      </NavDropdown>
