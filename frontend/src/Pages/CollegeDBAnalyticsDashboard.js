@@ -5,7 +5,7 @@ import SubtestData from "../Components/SubtestData";
 import FocusedTestData from "../Components/FocusedTestData";
 import ComprehensiveTestData from "../Components/ComprehensiveTestData";
 
-const CollegeAnalyticsDashboard = () => {
+const CollegeDBAnalyticsDashboard = () => {
 
   const endpoints = {
     subTestEndpoint: {
@@ -22,14 +22,12 @@ const CollegeAnalyticsDashboard = () => {
     },
   };
   return (
-    <>
       <div className="flex flex-col p4">
         <SubtestData endpoint={endpoints.subTestEndpoint} />
         <FocusedTestData endpoint={ endpoints.focusedTestEndpoint} />
         <ComprehensiveTestData endpoint={ endpoints.ComprehensiveTestEndpoint} />
       </div>
-    </>
   );
 };
 
-export default CollegeAnalyticsDashboard;
+export default CollegeDBAnalyticsDashboard;

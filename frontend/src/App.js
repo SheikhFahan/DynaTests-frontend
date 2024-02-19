@@ -27,7 +27,8 @@ import Footer from './Components/Footer'
 import ForgotPassowordPage from "./Pages/ForgotPassowordPage";
 import ChangePasswordPage from "./Pages/ChangePasswordPage";
 import StudentInfoChange from "./Pages/StudentInfoChange";
-import CollegeAnalyticsDashboard from "./Pages/CollegeAnalyticsDashboard";
+import CollegeDBAnalyticsDashboard from "./Pages/CollegeDBAnalyticsDashboard";
+import CollegeSessionAnalyticalDashboard from "./Pages/CollegeSessionAnalyticalDashboard";
 
 function App() {
   console.log(process.env.REACT_APP_DEP_URL)
@@ -51,7 +52,8 @@ function App() {
               <Route path='/create_categories' element ={<CreateCategoriesComp />} />
               <Route path='/create_combined_categories' element ={<CreateCombinedCategories />} />
 
-              <Route path='/analytical_dashboard' element ={<CollegeAnalyticsDashboard />} />
+              <Route path='/db_analytical_dashboard' element ={<CollegeDBAnalyticsDashboard />} />
+              <Route path='/session_analytical_dashboard' element ={<CollegeSessionAnalyticalDashboard />} />
 
               <Route path='/institution_dashboard' element ={<TestManagementPage />} />
               <Route path='/institution_dashboard/create_group_sub_test' element ={<CreateGroupSubTest />} />

@@ -3,7 +3,7 @@ import { Chart as ChartJS, defaults } from "chart.js/auto";
 import { Bar, Radar, Line } from "react-chartjs-2";
 import RateOfChangeCalculator from './RateOfChangeCalculator'
 
-const GraphComp = ({ data}) => {
+const GraphComp = ({ data }) => {
 
   const dateLabels = data.map((entry) =>
     new Date(entry.timestamp).toLocaleDateString()
@@ -19,6 +19,9 @@ const GraphComp = ({ data}) => {
       x: {
         display: false, // Hide the x-axis labels
       },
+      y :{
+        beginAtZero : true,
+      }
     },
   };
   const chartData = {

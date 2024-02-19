@@ -46,6 +46,7 @@ const FocusedTestData = ({endpoint}) => {
           .catch((error) => console.error("Error fetching data:", error));
       }, []);
   return (
+    // not using the firs useEffect rn 
     <Table striped bordered hover responsive>
     <thead>
       <tr>
