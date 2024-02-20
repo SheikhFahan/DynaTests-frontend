@@ -13,7 +13,7 @@ const CollegeDBAnalyticsDashboard = () => {
       endpoint2: "api/group_tests/subtest_detailed_data/",
     },
     focusedTestEndpoint: {
-      endpoint1: "api/group_tests/category_test_data/",
+      // endpoint1: "api/group_tests/category_test_data/", redundant for now 
       endpoint2: "api/group_tests/category_test_detailed_data",
     },
     ComprehensiveTestEndpoint: {
@@ -22,7 +22,7 @@ const CollegeDBAnalyticsDashboard = () => {
     },
   };
   return (
-      <div className="flex flex-col p4">
+      <div className="flex flex-col container ">
         <SubtestData endpoint={endpoints.subTestEndpoint} />
         <FocusedTestData endpoint={ endpoints.focusedTestEndpoint} />
         <ComprehensiveTestData endpoint={ endpoints.ComprehensiveTestEndpoint} />

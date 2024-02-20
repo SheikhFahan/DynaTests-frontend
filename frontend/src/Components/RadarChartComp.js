@@ -16,7 +16,7 @@ const RadarChartComp = ({labels, values}) => {
   return (
     <Radar
      data={data} 
-     className='w-full h-full'
+     className=''
      />
   )
 }

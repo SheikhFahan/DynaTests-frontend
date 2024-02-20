@@ -17,11 +17,10 @@ const CollegeSessionAnalyticalDashboard = () => {
     },
   };
   return (
-    <div className='flex flex-col container '>
-      <TestSessionData endpoints={endpoints.subTestEndpoint} />
-      <TestSessionData endpoints={endpoints.focusedTestEndpoint} />
-      <TestSessionData endpoints={endpoints.comprehensiveTestEndpoint} />
-
+    <div className='flex flex-col container min-h-screen '>
+      <TestSessionData endpoints={endpoints.subTestEndpoint} type = "Sub Tests" />
+      <TestSessionData endpoints={endpoints.focusedTestEndpoint} type = "Focused Tests"/>
+      <TestSessionData endpoints={endpoints.comprehensiveTestEndpoint} type = "Comprehensive  Tests"/>
     </div>
   )
 }
