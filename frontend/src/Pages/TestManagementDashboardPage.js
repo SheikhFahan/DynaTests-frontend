@@ -16,12 +16,11 @@ const TestManagementPage = () => {
     urlEnd : 'group_test_combined_categories',
   }
   return (
-    <>
-    <div>TestManagementPage</div>
+    <div className='container  text-lg py-20 mb-20 '>
     <Dashboard data = {subTestData}/>
     <Dashboard data = {TestCategoryData} />
     <Dashboard data = {TestCombinedCategoryData} />
-    </>
+    </div>
 
   )
 }

@@ -3,13 +3,10 @@ import axios from "axios";
 
 import Table from "react-bootstrap/Table";
 import Card from "react-bootstrap/Card";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-
-import RadarChartComp from "./RadarChartComp";
 import AuthContext from "../Context/AuthContext";
-import InstituteDBTable from "./InstituteDBTable";
 
-import { Link } from "react-router-dom";
 
 const FocusedTestData = ({endpoint}) => {
     const [data, setData] = useState([]);
@@ -19,21 +16,6 @@ const FocusedTestData = ({endpoint}) => {
     const {AuthTokens} = useContext(AuthContext)
 
     useEffect(() => {
-        axios
-          .get(`${process.env.REACT_APP_DEP_URL}${endpoint.endpoint1}`, {
-            headers: {
-              Authorization: `Bearer ${AuthTokens.access}`,
-            },
-          })
-          .then((response) => {
-            console.log(response.data)
-
-            setCategoryLables(response.data.map((entry) => entry.category_name));
-            setCategoryLableValues(response.data.map((entry) => entry.count));
-          })
-          .catch((error) => console.error("Error fetching data:", error));
-
-
           axios
           .get(`${process.env.REACT_APP_DEP_URL}${endpoint.endpoint2}`, {
             headers: {
@@ -47,6 +29,19 @@ const FocusedTestData = ({endpoint}) => {
       }, []);
   return (
     // not using the firs useEffect rn 
+   <div className="mb-10">
+     <Card className="flex flex-col w-full  items-center justify-center mb-10">
+    <Card.Body className="">
+      <Card.Title>Total Focused Tests : {data.length}</Card.Title>
+    </Card.Body>
+  </Card>    
+  <InfiniteScroll
+        // dataLength={concatArray.length}
+        dataLength={10}
+        className="max-h-80 w-full overflow-y-scroll"
+        loader={<h4>Loading...</h4>}
+        scrollableTarget="scrollableDiv"
+      >
     <Table striped bordered hover responsive>
     <thead>
       <tr>
@@ -69,6 +64,9 @@ const FocusedTestData = ({endpoint}) => {
       ))}
     </tbody>
   </Table>
+  </InfiniteScroll>
+
+   </div>
   )
 }
 

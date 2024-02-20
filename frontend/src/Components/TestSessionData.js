@@ -4,14 +4,16 @@ import axios from "axios";
 import AuthContext from "../Context/AuthContext";
 import GraphComp from "./GraphComp";
 
+import Card from "react-bootstrap/Card";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 
-const TestSessionData = ({ endpoints }) => {
+const TestSessionData = ({ endpoints , type}) => {
   const [sessionData, setSessionData] = useState([]);
   const [graphData, setGraphData] = useState([]);
   const { AuthTokens } = useContext(AuthContext);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [scoresSummary, setScoresSummary] = useState([]);
   const session_stats = {
     min: {
       name: "",
@@ -42,8 +44,7 @@ const TestSessionData = ({ endpoints }) => {
       })
       .catch((error) => console.error("error fetching data", error));
   };
-let avg_score = 0;
-  // Iterate through the JSON data to find the min and max scores
+  let avg_score = 0;
   graphData.forEach((entry) => {
     const score = entry.score;
     if (score < session_stats.min.score) {
@@ -56,25 +57,22 @@ let avg_score = 0;
     }
     avg_score += score;
   });
-  avg_score = avg_score/graphData.length;
+  avg_score = avg_score / graphData.length;
   console.log(session_stats);
 
-  //   const handleCategoryData = (pk) => {
-  //     axios
-  //       .get(
-  //         `${process.env.REACT_APP_DEP_URL}api/user/questions_statistics/${pk}/`,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${AuthTokens.access}`,
-  //           },
-  //         }
-  //       )
-  //       .then((response) => {
-  //         setCategoryData(response.data);
-  //         console.log(response.data, `data for ${pk}`);
-  //       })
-  //       .catch((error) => console.error("error fetching data", error));
-  //   };
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_DEP_URL}${endpoints.endpoint2}4/`, {
+        headers: {
+          Authorization: `Bearer ${AuthTokens.access}`,
+        },
+      })
+      .then((response) => {
+        setScoresSummary(response.data);
+        console.log(response.data, `data for 1`);
+      })
+      .catch((error) => console.error("error fetching data", error));
+  }, []);
 
   useEffect(() => {
     axios
@@ -89,49 +87,75 @@ let avg_score = 0;
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
   return (
-    <div className="flex flex-col h-full w-full">
-      <Tabs
-        onSelect={handleTabSelect}
-        defaultActiveKey={null}
-        id="fill-tab-example"
-        className="mb-3 text-lg text-slate-950 lowercase"
-      >
-        {sessionData.map((item) => (
-          <Tab
-            eventKey={item.pk}
-            title={item.name}
-            key={item.pk}
-            className=""
-            onSelect={() => handleTabSelect(item.pk)}
-          >
-            <div className="flex flex-row justify-center items-center h-full w-full">
-              {selectedItem && graphData.length > 1 ? (
-                <>
-                  <div className="flex flex-row justify-center items-center h-full w-full">
-                    <div className="w-1/2 container" >
-                      <GraphComp data={graphData} />
+    <div className="container flex flex-col  py-5">
+          <Card className=" w-full items-center ">
+      <Card.Body className="min-w-40">
+        <Card.Title>Total {type} Sessions : xx</Card.Title>
+      </Card.Body>
+    </Card>    
+      <div className="flex flex-col justify-center">
+        <div className="px-6 w-full ">
+          <GraphComp data={scoresSummary} aspectRatioValue={5} />
+        </div>
+        <div className="flex flex-col px-10 py-3">
+          <p className="text-lg text-gray-800  text-shadow-lg">
+            max_scorer :Test data with Test Score<br />
+            min_scorer : Test data with Test Score
+            <br />
+            avg_score : more Test data
+          </p>
+          <p className="text-base mb-2">
+            {`Total number of Sessions: ${graphData.length}`}
+          </p>
+        </div>
+      </div>
+      <div className="flex flex-col ">
+        <Tabs
+          onSelect={handleTabSelect}
+          defaultActiveKey={null}
+          id="fill-tab-example"
+          className="mb-3 text-lg text-slate-950 lowercase"
+        >
+          {sessionData.map((item) => (
+            <Tab
+              eventKey={item.pk}
+              title={item.name}
+              key={item.pk}
+              className=""
+              onSelect={() => handleTabSelect(item.pk)}
+            >
+              <div className="container flex flex-col  py-5">
+                {selectedItem && graphData.length > 1 ? (
+                  <>
+                    <div className="flex flex-col justify-center">
+                      <div className="w-full px-4">
+                        <GraphComp data={graphData} aspectRatioValue={5} />
+                      </div>
+                      <div className="flex flex-col px-10 py-3">
+                        <p className="text-lg text-gray-800  text-shadow-lg">
+                          max_scorer :{session_stats.max.name} with{" "}
+                          {session_stats.max.score} <br />
+                          min_scorer : {session_stats.min.name} with{" "}
+                          {session_stats.min.score} <br />
+                          avg_score : {avg_score.toFixed(2)}
+                        </p>
+                        <p className="text-base mb-2">
+                          {`Total number of submissions: ${graphData.length}`}
+                        </p>
+                      </div>
                     </div>
-                 <div className="">
-                 <p className="text-lg text-gray-800  text-shadow-lg">
-                  max_scorer :{session_stats.max.name} with {session_stats.max.score} <br/>
-                    min_scorer : {session_stats.min.name} with {session_stats.min.score} <br/>
-                    avg_score : {avg_score.toFixed(2)}
-                  </p>
-                  <p className="text-base mb-2">
-                    {`Total number of submissions: ${graphData.length}`}
-                  </p>
-                 </div>
+                  </>
+                ) : (
+                  <div>
+                    not sufficent data to show progress please attempt more
+                    tests
                   </div>
-                </>
-              ) : (
-                <div>
-                  not sufficent data to show progress please attempt more tests
-                </div>
-              )}
-            </div>
-          </Tab>
-        ))}
-      </Tabs>
+                )}
+              </div>
+            </Tab>
+          ))}
+        </Tabs>
+      </div>
     </div>
   );
 };

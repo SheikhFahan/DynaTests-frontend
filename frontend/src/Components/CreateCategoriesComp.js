@@ -10,6 +10,7 @@ import AuthContext from "../Context/AuthContext";
 
 const CreateCategoriesComp = () => {
   const { user, AuthTokens } = useContext(AuthContext);
+  const [placeholder, setPlaceholder] = useState("Enter The Category Name")
 
   const baseUrl = `${process.env.REACT_APP_DEP_URL}api/`;
   const [data, setData] = useState({});
@@ -40,6 +41,11 @@ const CreateCategoriesComp = () => {
           },
         }
       );
+      if(response.status === 201) {
+        setPlaceholder("Enter The Category Name");
+        alert("category created")
+        window.location.reload();
+      }
       console.log("Response :", response.status);
     } catch (error) {
       console.error("Error:", error);
@@ -48,13 +54,13 @@ const CreateCategoriesComp = () => {
 
   return (
     <>
-      <div className="flex  flex-col items-center justify-center pt-6 min-h-96">
+      <div className="flex  flex-col items-center justify-center py-20 my-24 min-h-96">
         <form onSubmit={handleUpload} className="flex flex-col  items-center justify-center">
           <InputGroup className="mb-3" size="lg">
             <InputGroup.Text id="basic-addon1">Title</InputGroup.Text>
             <Form.Control
               name="Name"
-              placeholder="Enter The Category Name"
+              placeholder={placeholder}
               aria-label="label for category"
               aria-describedby="basic-addon1"
               required

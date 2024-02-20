@@ -72,7 +72,9 @@ function App() {
           </Routes>
         </AuthProvider>
       </Router>
+      <div className="relative bottom-0">
       <Footer />
+      </div>
     </div>
   );
 }
