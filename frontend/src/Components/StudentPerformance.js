@@ -5,8 +5,6 @@ import axios from "axios";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import RadarChartComp from "./RadarChartComp";
-import ProgressBarChart from "./ProgressBarChart";
-import DoughnutChart from "./DoughnutChart";
 import QuestionsStatistics from "./QuestionsStatistics";
 
 const StudentPerformance = () => {
