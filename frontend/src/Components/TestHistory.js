@@ -62,7 +62,6 @@ const TestHistory = () => {
 
   return (
     <div    >
-      {/*Put the scroll bar always on the bottom*/}
       <InfiniteScroll
         dataLength={concatArray.length}
         className="max-h-1/7 w-full"
