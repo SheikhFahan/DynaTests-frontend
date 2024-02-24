@@ -47,7 +47,7 @@ const SubtestData = ({endpoint}) => {
     <div className="flex flex-col w-full  items-center justify-center my-5">
     <Card className=" w-full items-center ">
       <Card.Body className="min-w-40">
-        <Card.Title>Total SubTests : {categoryLables.length}</Card.Title>
+        <Card.Title>Total SubTests : {data.length}</Card.Title>
       </Card.Body>
     </Card>    
     <div className="flex flex-row w-full h-full items-center justify-center text- md">
