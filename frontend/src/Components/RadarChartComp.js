@@ -1,24 +1,34 @@
-import React from 'react'
+import React from "react";
 import { Radar } from "react-chartjs-2";
 
+const RadarChartComp = ({ labels, values }) => {
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Data",
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgba(54, 162, 235, 1)",
+        data: values,
+      },
+    ],
+  };
 
-const RadarChartComp = ({labels, values}) => {
+  const options = {
 
-    const data = {
-          labels:labels,
-          datasets: [{
-            label: 'Data',
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            data:values
-          }]
-        };
-  return (
-    <Radar
-     data={data} 
-     className=''
-     />
-  )
-}
+    scale: {
+      r: {
+          angleLines: {
+              display: false
+          },
+          suggestedMin: 0,
+          suggestedMax: values.length+1
+      },
+  }
+    
+  };
+ 
+  return <Radar data={data} options={options} className="" />;
+};
 
-export default RadarChartComp
+export default RadarChartComp;
