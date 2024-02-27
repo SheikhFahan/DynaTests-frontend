@@ -49,10 +49,10 @@ const StudentPerformance = () => {
         setgraphCategories(response.data);
         setCategoryLables(response.data.map((entry) => entry.category_name));
         setCategoryLableValues(response.data.map((entry) => entry.count));
+        
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
-
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_DEP_URL}api/user/questions_statistics/`, {
@@ -75,7 +75,6 @@ const StudentPerformance = () => {
       })
       .then((response) => {
         setCategoriesData(response.data);
-        console.log(response.data, "graph data");
       })
       .catch((error) => console.error("error fetching data", error));
   };
@@ -89,7 +88,6 @@ const StudentPerformance = () => {
       })
       .then((response) => {
         setCategoryData(response.data);
-        console.log(response.data, `data for ${pk}`);
       })
       .catch((error) => console.error("error fetching data", error));
   };
