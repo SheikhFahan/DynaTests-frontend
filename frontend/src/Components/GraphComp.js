@@ -9,7 +9,6 @@ const GraphComp = ({ data , aspectRatioValue  }) => {
     new Date(entry.timestamp).toLocaleDateString()
   );
   const scores = data.map((entry) => entry.score);
-  console.log(aspectRatioValue, "asfajsdfkjasdklfhjaskldjh")
 
   // const maxScore = Math.max(...scores);
 
