@@ -50,7 +50,7 @@ const TableComp = ({ data, handler, copySuccess, type, userId }) => {
               <td>No password</td>
             )}
             <td
-              onClick={() => handler(`${process.env.REACT_APP_DEP_URL}${type}${userId}/${item.pk}/`, index)}
+              onClick={() => handler(`https://dyna-tests.netlify.app/${type}${userId}/${item.pk}/`, index)}
               className="underline"
             >
               {
