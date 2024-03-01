@@ -163,6 +163,8 @@ const CreateGroupTestSessions = () => {
       console.log("Response2 :", response.data);
       if (response.status == 201) {
         return alert("Protected Test SuccessfullyCreated");
+        window.location.reload();
+
       }
     } catch (error) {
       console.error(error);
@@ -171,7 +173,7 @@ const CreateGroupTestSessions = () => {
 
   return (
     <>
-      <div className="flex  flex-col items-center">
+      <div className="flex  flex-col items-center py-9">
         <form onSubmit={handleUpload} className="mt-10 space-y-5">
           <InputGroup className=" relative" size="lg">
             <InputGroup.Text id="basic-addon1">Name</InputGroup.Text>

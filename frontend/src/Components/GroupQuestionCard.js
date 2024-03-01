@@ -327,6 +327,8 @@ const GroupQuestionsCard = () => {
                 options={question.choices}
                 handleChoice={handleEasyAnswers}
                 currentQuestion = {currentQuestion + index}
+                id={index}
+
               />
             ))}
           </div>
@@ -339,6 +341,7 @@ const GroupQuestionsCard = () => {
                 options={question.choices}
                 handleChoice={handleMediumAnswers}
                 currentQuestion = {currentQuestion + easy_question_array.length+ index}
+                id={index}
 
               />
             ))}
@@ -352,6 +355,7 @@ const GroupQuestionsCard = () => {
                 options={question.choices}
                 handleChoice={handleHardAnswers}
                 currentQuestion = {currentQuestion + easy_question_array.length +medium_question_array.length + index}
+                id={index}
 
               />
             ))}

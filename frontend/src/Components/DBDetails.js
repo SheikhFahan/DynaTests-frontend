@@ -6,7 +6,7 @@ import Table from 'react-bootstrap/Table';
 
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const TestHistory = () => {
+const DBDetails = () => {
   const baseURL = `${process.env.REACT_APP_DEP_URL}api/user/history/`;
   const [data, setData] = useState([""]);
   const [concatArray, setConcatArray] = useState([]);
@@ -62,6 +62,7 @@ const TestHistory = () => {
 
   return (
     <div    >
+      {/*Put the scroll bar always on the bottom*/}
       <InfiniteScroll
         dataLength={concatArray.length}
         className="max-h-1/7 w-full"
@@ -97,8 +98,4 @@ const TestHistory = () => {
   );
 };
 
-export default TestHistory;
-
-
-// {index}
-// {item.category_name}({item.test_score}) on {formatDate(item.date)}
+export default DBDetails;

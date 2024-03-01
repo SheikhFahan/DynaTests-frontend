@@ -21,7 +21,8 @@ const Tests = () => {
     },
   ];
   return (
-    <div className="flex flex-wrap justify-center items-center p-14 mb-10">
+  <div className="container items-center  align-center justify-center">
+      <div className="flex flex-row justify-center items-center py-24 my-28">
       {cardData.map((card, index) => (
         <Card
           key={index}
@@ -38,6 +39,7 @@ const Tests = () => {
         </Card>
       ))}
     </div>
+  </div>
   );
 };
 

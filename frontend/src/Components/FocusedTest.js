@@ -199,6 +199,8 @@ const FocusedTest = () => {
                 options={question.choices}
                 handleChoice={handleMediumAnswers}
                 currentQuestion = {currentQuestion + easy_question_array.length+ index}
+                id={index}
+
 
               />
             ))}
@@ -212,6 +214,7 @@ const FocusedTest = () => {
                 options={question.choices}
                 handleChoice={handleHardAnswers}
                 currentQuestion = {currentQuestion + easy_question_array.length +medium_question_array.length + index}
+                id={index}
 
               />
             ))}

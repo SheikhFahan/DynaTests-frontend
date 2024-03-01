@@ -3,7 +3,7 @@ import hero from '../Images/hero.png'
 import HeroBanner from './HeroBanner';
 const Hero = () => {
     return (
-        <div className="bg-white  text-black py-5 md:py-20 lg:py-32 px-14 ">
+        <div className="container  text-black py-10   ">
             <div className="mx-auto flex flex-col md:flex-row items-center mb-28">
                 <div className="flex flex-col w-full md:w-1/2 justify-center items-center md:items-start p-4 md:p-8 ">
                     <h2 className="text-2xl md:text-4xl lg:text-5xl leading-relaxed md:leading-snug mb-2 text-black ">

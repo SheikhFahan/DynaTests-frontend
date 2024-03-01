@@ -93,7 +93,7 @@ const CreateCombinedCategories = () => {
   };
 
   return (
-    <div className="flex justify-center mt-20">
+    <div className="flex justify-center mt-20 py-20">
         <form onSubmit={handleUpload} className="flex flex-col items-center">
         <InputGroup className="mb-3" size="lg">
             <InputGroup.Text id="basic-addon1">Combined Category Name</InputGroup.Text>
