@@ -262,14 +262,14 @@ const GroupQuestionsCard = () => {
   }
   console.log(showModal);
   return (
-    <div className="flex flex-col items-center min-w-screen ">
+    <div className="flex flex-col items-center min-w-screen min-h-screen ">
       {showModal ? (
         <div
           className="modal show"
           style={{ display: "block", position: "initial" }}
         >
           {showModal && (
-            <Modal.Dialog>
+            <Modal.Dialog >
               <Modal.Header closeButton>
                 <Modal.Title>Password Required</Modal.Title>
               </Modal.Header>

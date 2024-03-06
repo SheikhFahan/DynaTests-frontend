@@ -1,6 +1,8 @@
 import React from 'react';
 import hero from '../Images/hero.png'
 import HeroBanner from './HeroBanner';
+import { Link } from "react-router-dom";
+
 const Hero = () => {
     return (
         <div className="container  text-black py-10   ">
@@ -13,7 +15,7 @@ const Hero = () => {
                         Explore your favorite subjects and  board on a journey of learning with DynaTests.
                     </p>
                     <a
-                        href="#"
+                        href="/test"
                         className="bg-transparent hover:bg-black 300 text-black hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent"
                     >
                         Explore Now

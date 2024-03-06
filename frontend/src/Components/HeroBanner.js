@@ -19,7 +19,7 @@ const HeroBanner = () => {
   
         <div class="mt-8 flex flex-wrap justify-center gap-4">
         <a
-                        href="#"
+                        href="/register"
                         className="bg-transparent hover:bg-black 300 text-black hover:text-black rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent"
                     >
                         Get Started
