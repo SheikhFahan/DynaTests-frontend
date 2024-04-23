@@ -17,7 +17,7 @@ const NavbarComp = () => {
   return (
     <Navbar
       expand="lg"
-      className="  bg-gradient-to-b from-gray-200 to-gray-100  min-h-full min-w-full"
+      className=" min-w-full my-0 py-0 "
     >
       <Container>
         <Navbar.Brand to="/" as={Link}>
@@ -27,10 +27,10 @@ const NavbarComp = () => {
             className="d-inline-block align-top w-50 h-70"
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav nline-block text-blue-500 hover:text-blue-700 hover:underline transition duration-300" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="text-lg whitespace-nowrap  space-x-4">
-            <Nav.Link to="/" as={Link}>
+          <Nav className="text-lg whitespace-nowrap  space-x-7 ">
+            <Nav.Link to="/" as={Link} >
               Home
             </Nav.Link>
 

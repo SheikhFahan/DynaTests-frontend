@@ -128,7 +128,6 @@ const CombinationQuestions = () => {
          {Object.keys(data).map((categoryKey) => (
         
         <div className=" flex flex-col items-center mt-7 w-2/3  space-y-5 ">
-                      <h1>{categoryKey}</h1>
 
         <div className="min-w-full ">
                         {data[categoryKey].easy_questions.map((question, index) => (

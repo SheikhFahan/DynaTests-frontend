@@ -8,7 +8,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   background-color:  #fff444; /* Your desired background color */
-
+  min-height: 100vh; /* This line is added */
+  min-width: 100vw; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
